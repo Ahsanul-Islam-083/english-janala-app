@@ -1,5 +1,5 @@
 # Visite👇
-[# ENGLISH <img width="25px" src="./assets/logo.png" /> JANALA](https://ahsanul-islam-083.github.io/english-janala-app/)
+# [ENGLISH <img width="25px" src="./assets/logo.png" /> JANALA](https://ahsanul-islam-083.github.io/english-janala-app/)
 
 ---
 
