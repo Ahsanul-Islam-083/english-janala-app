@@ -1,106 +1,103 @@
-# Visite👇
-# [ENGLISH <img width="25px" src="./assets/logo.png" /> JANALA](https://ahsanul-islam-083.github.io/english-janala-app/)
+# 📖 English Janala
+
+> **Learn English Vocabulary — Level by Level** — An interactive vocabulary learning app powered by a live API with pronunciation, search, and save features!
+
+🚀 [Visit the Live App](https://ahsanul-islam-083.github.io/english-janala-app/)
+
+---
+
+## 📖 Overview
+
+**English Janala** is a browser-based vocabulary learning app that fetches English words level by level from a live API. Users can browse lessons, view word meanings and pronunciations, hear words spoken aloud, save favourites, and search across the entire vocabulary — all in one clean, interactive UI.
+
+---
+
+## 🖼️ Screenshot
+
+> <img width="1900" height="980" alt="image" src="https://github.com/user-attachments/assets/081444e0-b5db-4f28-a90e-196f90e67b23" />
+> <img width="1900" height="974" alt="image" src="https://github.com/user-attachments/assets/1750cb22-60c5-472e-bb81-a629d0474442" />
+
+
+---
+
+## 🚀 Features
+
+- 📚 **Level-based lessons** — dynamically generated lesson buttons from the API
+- 🃏 **Word cards** — displays word, meaning, pronunciation, and action buttons
+- 🔊 **Voice pronunciation** — hear any word spoken aloud with one click
+- 🔍 **Search functionality** — search across all words in real time
+- ❤️ **Save words** — bookmark favourite words to a personal saved section
+- 🔄 **Loading spinner** — smooth feedback while vocabulary data is fetching
+- ⚠️ **Error handling** — gracefully handles missing or invalid API data
+- 🎯 **Active button highlight** — clearly shows which lesson is currently selected
 
 ---
 
 ## ⚡ API Endpoints
 
-1. Get ⚡ All Levels
+| Endpoint | Description |
+|---|---|
+| `GET /api/levels/all` | Fetch all lesson levels |
+| `GET /api/level/{id}` | Fetch all words for a specific level |
+| `GET /api/word/{id}` | Fetch details for a specific word |
+| `GET /api/words/all` | Fetch all words |
+
+**Base URL:** `https://openapi.programming-hero.com`
 
 ```bash
-https://openapi.programming-hero.com/api/levels/all
+# Example requests
+GET https://openapi.programming-hero.com/api/levels/all
+GET https://openapi.programming-hero.com/api/level/5
+GET https://openapi.programming-hero.com/api/word/5
+GET https://openapi.programming-hero.com/api/words/all
 ```
-
-1. Get ⚡ Words by Levels <br/>
-   https:// openapi.programming-hero.com/api/level/{id}
-
-```bash
-https://openapi.programming-hero.com/api/level/5
-```
-
-1. Get ⚡ Words Detail <br/>
-   https:// openapi.programming-hero.com/api/word/{id}
-
-```bash
-https://openapi.programming-hero.com/api/word/5
-```
-
-1. Get ⚡ All Words <br/>
-
-```bash
-https://openapi.programming-hero.com/api/words/all
-```
-
-# Features
-
-### 1. Show Levels on The UI
-
-- [ ] Show a center-aligned heading as Figma
 
 ---
 
-- [ ] Create dynamically generated buttons from **API-01** for each lesson
-- [ ] Lesson Buttons will be displayed on page load
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Page structure |
+| CSS3 | Styling and layout |
+| Vanilla JavaScript | App logic and API calls |
+| Fetch API | Async data fetching |
+| Web Speech API | Voice pronunciation |
 
 ---
 
-### 2. Show Word Cards Based on Level
+## 🏃 Run Locally
 
-- [ ] Show a default text that will be displayed in the Vocabulary section initially
-- [ ] on Clicking a Specific Lesson Button Load All the words from **API-02**
-- [ ] Display all words for a selected lesson in a card format, showing:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ahsanul-islam-083/english-janala-app.git
+   cd english-janala-app
+   ```
 
-  - [ ] Word
-  - [ ] Word meaning & pronunciation
-  - [ ] Two buttons with relevant icons as per Figma
-
-- [ ] Show **\*No Word Found** message if no words exist for a lesson
+2. **Open in your browser**
+   ```bash
+   # Simply open index.html in any browser
+   open index.html
+   ```
+   > No server or build step needed — it's pure HTML, CSS, and JS!
 
 ---
 
-- [ ] Create functionality to highlight the active lesson button
+## 🎮 How to Use
+
+| Action | Result |
+|---|---|
+| Click a lesson button | Loads all words for that level |
+| Click the 🔊 icon | Pronounces the word aloud |
+| Click the details icon | Opens a modal with full word info |
+| Click ❤️ on a card | Saves the word to your saved section |
+| Type in the search box | Filters words across all vocabulary |
 
 ---
 
-### 3. Use Different Color on The Active Level Button
+## 🔊 Voice Pronunciation
 
-- [ ] After Successfully Loading words of a level , diffirentiate the button so user can understand which button is active
-
-### 4. Vocabulary Details
-
-- [ ] Create functionality to open a modal when clicking the details icon
-- [ ] Data will be load from **API-03**
-- [ ] modal will displays:
-  - [ ] Word with pronunciation
-  - [ ] Example sentence
-  - [ ] Synonyms
-  - [ ] A "Complete Learning" button to close the modal
-
-### 5. Handling Invalid Data
-
-- [ ] avoid displaying falsy values like `undefined` or `null`
-- [ ] display relevant words if no data is found
-
-### 6. Loading Spinner
-
-- [ ] Create a loading spinner that will be display when vocabulary is loading from API
-
-### 7. Implement Search Functionality
-
-- [ ] Take a input Box.
-- [ ] on Changing value It will Search word and show in the UI.
-- [ ] If anyone Do search reset active button
-
-### 8. Save Word Feature
-
-- [ ] in the UI of Card add a button `Heart icon`
-- [ ] on Clicking it. Store the Word in the Saved Box
-- [ ] Show Saved words in a Different Section.
-
-### 9. Speak Vocabularies
-
-- [ ] Create functionality for voice pronunciation of vocabulary words
-- [ ] This function allows voice pronunciation of words, implemented on clicking sound icon
+The app uses the browser's built-in Web Speech API for audio pronunciation:
 
 ```js
 function pronounceWord(word) {
@@ -109,3 +106,34 @@ function pronounceWord(word) {
   window.speechSynthesis.speak(utterance);
 }
 ```
+
+---
+
+## 📁 Project Structure
+
+```
+english-janala-app/
+├── index.html        # Main HTML file
+├── styles/
+│   └── style.css     # App styles
+├── script/
+│   └── app.js        # Core app logic
+└── assets/
+    └── logo.png      # App logo
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open an issue or submit a pull request for bug fixes, new features, or design improvements.
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+> 💡 *Learn a little every day — vocabulary is the key to fluency!*
